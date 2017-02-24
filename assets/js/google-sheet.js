@@ -31,6 +31,7 @@ $("#foo").submit(function(event){
 
     // Callback handler that will be called on success
     request.done(function (response, textStatus, jqXHR){
+        $form[0].reset(); // Clear the form
         // Log a message to the console
         console.log("Hooray, it worked!");
         console.log(response);
