@@ -9,6 +9,7 @@
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
 	</head>
+
 	<body class="landing">
 		<div id="page-wrapper">
 
@@ -21,7 +22,7 @@
 							<li>
 								<a href="#featuresSection">Features</a>
 							</li>
-							<li><a href="#" class="button">Sign Up</a></li>
+							<li><a href="#signUpForm" class="button">Sign Up</a></li>
 						</ul>
 					</nav>
 				</header>
@@ -30,14 +31,14 @@
 				<section id="banner">
 					<h2>Blockracy</h2>
 					<ul class="actions">
-						<li><a href="#" class="button special">Sign Up</a></li>
-						<li><a href="#" class="button">Learn More</a></li>
+						<li><a href="#signUpForm" class="button special">Sign Up</a></li>
+						<li><a href="#featuresSection" class="button">Learn More</a></li>
 					</ul>
 				</section>
 
 			<!-- Main -->
-				<section id="main" class="container"><a name="topSection"></a>
-
+				<section id="main" class="container"><!--<a name="topSection"></a>-->
+				<div id="topSection">
 					<section class="box special">
 						<header class="major">
 							<h2>Increasing direct democracy at the local level by using blockchain technology to create secure, small-scale voting.
@@ -47,7 +48,7 @@
 						<span class="image featured"><img src="images/flag.jpg" alt="" style="max-height: 450px"/></span>
 					</section>
 
-					<section class="box special features"><a name="featuresSection"></a>
+					<section class="box special features" id="featuresSection"><!--<a name="featuresSection"></a>-->
 						<div class="features-row">
 							<section>
 								<span class="icon major fa-bolt accent2"></span>
@@ -102,17 +103,16 @@
 						</div>
 					</div>
 					-->
-
 				</section>
-
+				</div>
 			<!-- CTA -->
 				<section id="cta">
 
-					<h2>Sign up for beta access</h2>
+					<h2 id="signUpForm">Sign up for beta access</h2>
 					<p>You'll be the first to know when we launch.</p>
 
 					<!--<form action="mailto:someone@example.com" method="post" enctype="text/plain">-->
-					<form id='foo'>
+					<form id='foo'><!--<a name="signUpForm"></a>-->
 						<div class="row uniform 50%">
 							<div class="8u 12u(mobilep)">
 								<input type="email" name="email" id="email" placeholder="Email Address" />
@@ -132,6 +132,7 @@
 						<li><img src="images/wsjlogo.jpg" alt="" class="news_logos"/></li>
 						<li><img src="images/forbes.jpg" alt="" class="news_logos"/></li>						
 						<li><img src="images/nyt.jpg" alt="" class="news_logos"/></li>
+						<li><img src="images/stanford.jpg" alt="" class="news_logos"/></li>
 					</ul>
 				</footer>
 
@@ -147,5 +148,31 @@
 			<script src="assets/js/main.js"></script>
 			<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 			<script src='assets/js/google-sheet.js'></script>
+			<script>
+				$(document).ready(function(){
+				  // Add smooth scrolling to all links
+				  $("a").on('click', function(event) {
+				  	console.log("Clicked!");
+				    // Make sure this.hash has a value before overriding default behavior
+				    if (this.hash !== "") {
+				      // Prevent default anchor click behavior
+				      event.preventDefault();
+
+				      // Store hash
+				      var hash = this.hash;
+
+				      // Using jQuery's animate() method to add smooth page scroll
+				      // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+				      $('html, body').animate({
+				        scrollTop: $(hash).offset().top
+				      }, 800, function(){
+				   
+				        // Add hash (#) to URL when done scrolling (default click behavior)
+				        window.location.hash = hash;
+				      });
+				    } // End if
+				  });
+				});
+			</script>
 	</body>
 </html>
